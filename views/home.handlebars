@@ -1,3 +1,26 @@
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Reps</th>
+			<th>Weight</th>
+			<th>Date</th>
+			<th>Lbs</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each rows}}
+			<tr>
+				<td>{{this.name}}</td>
+				<td>{{this.reps}}</td>
+				<td>{{this.weight}}</td>
+				<td>{this.date}}</td>
+				<td>{{this.lbs}}</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
+
 {{#if reset}}
 	<p>{{{reset}}}</p>
 {{/if}}
