@@ -57,8 +57,8 @@ app.get('/insert',function(req,res,next){
 
   pool.query("INSERT INTO workouts (`name`, `reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.query.name, req.query.reps, req.query.weight, req.query.date, req.query.lbs], function(err, result){
     if(err){
-      //next(err);
-      //return;
+      next(err);
+      return;
     }
     context.insert = "Inserted id: " + result.insertId;
 	res.send(context);
