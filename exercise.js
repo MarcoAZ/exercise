@@ -50,6 +50,14 @@ app.get('/reset-table',function(req,res,next){
 app.get('/insert',function(req,res,next){
   var context = {};
   console.log("req: " + req);
+  console.log("req.body: " + req.body);
+   console.log("[req.body]: " + [req.body]);
+  console.log("req.body.name: " + req.body.name);
+  console.log("req.body.name[]: " + [req.body.name]);
+  console.log("req.query: " + req.query);
+  console.log("req.query[]: " + [req.query]);
+  console.log("req.query.name: " + req.query.name);
+  console.log("[req.query.name]: " + [req.query.name]);
 
   pool.query("INSERT INTO workouts (`name`, `reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.query.name, req.query.reps, req.query.weight, req.query.date, req.query.lbs], function(err, result){
     if(err){
