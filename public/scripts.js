@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', bindButtons);
 			payload.weight =  document.getElementById('weight').value;
 			payload.date =  document.getElementById('date').value;
 			payload.lbs =  document.getElementById('lbs').value;
+			console.log("payload: " + payload);
 			
 			req.open('GET', 'http://54.149.55.4:3000/insert', true);
 			//req.setRequestHeader('Content-Type', 'application/json');
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', bindButtons);
 				var response = JSON.parse(req.responseText);
 				console.log(response.insert);
 			  } else {
-				console.log("Error in network request: " + request.statusText);
+				console.log("Error in network request: " + req.statusText);
 			  }});
 			req.send(JSON.stringify(payload));
 			e.preventDefault();
