@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', bindButtons);
 			  } else {
 				console.log("Error in network request: " + req.statusText);
 			  }});
-			req.send(JSON.stringify(payload));
+			req.send(payload);
 			e.preventDefault();
 	})
 }
