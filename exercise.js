@@ -51,7 +51,7 @@ app.get('/insert',function(req,res,next){
   var context = {};
   console.log("req: " + req);
   console.log("req.query: " + req.query);
-  console.log("req.query[]: " + [req.query]);
+  console.log("req.query[0]: " + req.query[0]);
   console.log("req.query.name: " + req.query.name); //undefined
   console.log("[req.query.name]: " + [req.query.name]); //blank????
 
