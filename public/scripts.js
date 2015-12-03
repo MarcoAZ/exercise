@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', bindButtons);
 			  } else {
 				console.log("Error in network request: " + req.statusText);
 			  }});
+			console.log(JSON.stringify(payload));
 			req.send(JSON.stringify(payload));
 			e.preventDefault();
 	})
