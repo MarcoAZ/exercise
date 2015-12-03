@@ -11,6 +11,7 @@ var app = express();
 
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 
+app.use(express.static('public'));
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
@@ -43,6 +44,18 @@ app.get('/reset-table',function(req,res,next){
       context.reset= "Table reset";
       res.render('home',context);
     })
+  });
+});
+
+app.get('/insert',function(req,res,next){
+  var context = {};
+  pool.query("INSERT INTO workouts (`name`, `reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.name, req.reps, req.weight, req.date, req.lbs], function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
+    context.insert = "Inserted id: " + result.insertId;
+	res.send(context);
   });
 });
 
