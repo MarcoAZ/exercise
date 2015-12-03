@@ -19,7 +19,7 @@ app.set('port', 3000);
 
 app.get('/',function(req,res,next){
   var context = {};
-  mysql.pool.query('SELECT * FROM todo', function(err, rows, fields){
+  pool.query('SELECT * FROM todo', function(err, rows, fields){
     if(err){
       next(err);
       return;
@@ -39,7 +39,7 @@ app.get('/reset-table',function(req,res,next){
     "weight INT,"+
     "date DATE,"+
     "lbs BOOLEAN)";
-    mysql.pool.query(createString, function(err){
+    pool.query(createString, function(err){
       context.results = "Table reset";
       res.render('home',context);
     })
