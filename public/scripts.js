@@ -12,17 +12,17 @@ document.addEventListener('DOMContentLoaded', bindButtons);
 			payload.date =  document.getElementById('date').value;
 			payload.lbs =  document.getElementById('lbs').value;
 			
-			req.open('GET', 'http://54.149.55.4:3000/insert', true);
-			req.setRequestHeader('Content-Type', 'application/json');
-			req.addEventListener('load',function(){
-			  if(req.status >= 200 && req.status < 400){
-				var response = JSON.parse(req.responseText);
-				console.log(response.insert);
-			  } else {
-				console.log("Error in network request: " + req.statusText);
-			  }});
+			// req.open('GET', 'http://54.149.55.4:3000/insert', true);
+			// req.setRequestHeader('Content-Type', 'application/json');
+			// req.addEventListener('load',function(){
+			  // if(req.status >= 200 && req.status < 400){
+				// var response = JSON.parse(req.responseText);
+				// console.log(response.insert);
+			  // } else {
+				// console.log("Error in network request: " + req.statusText);
+			  // }});
 			console.log(JSON.stringify(payload));
-			req.send(JSON.stringify(payload));
+			//req.send(JSON.stringify(payload));
 			e.preventDefault();
 	})
 }
