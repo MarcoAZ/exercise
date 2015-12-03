@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', bindButtons);
 			payload.weight =  document.getElementById('weight').value;
 			payload.date =  document.getElementById('date').value;
 			payload.lbs =  document.getElementById('lbs').value;
-			console.log("payload: " + payload);
+			console.log("payload: " + payload.name);
 			
 			req.open('GET', 'http://54.149.55.4:3000/insert', true);
 			//req.setRequestHeader('Content-Type', 'application/json');
