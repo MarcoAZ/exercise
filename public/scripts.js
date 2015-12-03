@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', bindButtons);
 			payload.lbs =  document.getElementById('lbs').value;
 			console.log("payload: " + payload.name);
 			
-			// req.open('GET', 'http://54.149.55.4:3000/insert', true);
-			// //req.setRequestHeader('Content-Type', 'application/json');
+			req.open('GET', 'http://54.149.55.4:3000/insert', true);
+			//req.setRequestHeader('Content-Type', 'application/json');
 			// req.addEventListener('load',function(){
 			  // if(req.status >= 200 && req.status < 400){
 				// var response = JSON.parse(req.responseText);
