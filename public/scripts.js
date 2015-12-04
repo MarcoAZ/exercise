@@ -37,7 +37,7 @@ function bindButtons(){
 				var inputEdit = document.createElement("input");
 				var hiddenId = document.createElement("input");
 				//attach text
-				tdName.innerHTML = payload.Name;
+				tdName.innerHTML = payload.name;
 				tdReps.innerHTML = payload.reps;
 				tdWeight.innerHTML = payload.weight;
 				tdDate.innerHTML = payload.date;
@@ -57,7 +57,7 @@ function bindButtons(){
 				hiddenId.value = response.insertId
 				
 				//append inputs to td
-				tdDelete.appendChild(inputDelete);
+				tdDelete.innerHTML = "<input type='submit' id='delete' value='Delete'>";
 				tdEdit.appendChild(inputEdit);
 				
 				//append form components to form
