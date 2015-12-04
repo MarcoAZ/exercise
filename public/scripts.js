@@ -29,8 +29,8 @@ function bindButtons(){
 				var tdWeight = document.createElement("td");
 				var tdDate = document.createElement("td");
 				var tdLbs = document.createElement("td");
-				var tdDelete = document.createElement("td");
-				var tdEdit= document.createElement("td");
+				var tdDelete = document.createElement("div");
+				var tdEdit= document.createElement("div");
 				
 				var form = document.createElement("form");
 				var inputDelete = document.createElement("input");
