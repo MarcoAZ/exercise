@@ -47,7 +47,10 @@ function bindButtons(){
 				inputDelete.type = "submit";
 				inputDelete.id = "delete";
 				inputDelete.value = "Delete";
-				//inputDelete.innerHTML = "Delete";
+				inputDelete.addEventListener('click', function(e){
+					console.log("Delete");
+					e.preventDefault();
+				 });
 
 				inputEdit.type = "submit";
 				inputEdit.id = "edit";
