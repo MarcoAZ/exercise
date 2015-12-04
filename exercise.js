@@ -60,6 +60,7 @@ app.get('/insert',function(req,res,next){
       return;
     }
     context.insert = "Inserted id: " + result.insertId;
+	console.log(context.insert);
 	res.send(context);
   });
 });
