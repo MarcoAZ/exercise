@@ -34,20 +34,20 @@ function bindButtons(){
 				var tdEdit = document.createElement("td");
 
 				//var form = document.createElement("form");
-				var inputDelete = document.createElement("a");
+				var inputDelete = document.createElement("input");
 				var inputEdit = document.createElement("input");
 				var hiddenId = document.createElement("input");
 				//attach text
-				tdName.innerHTML = "sdfsd";
-				tdReps.innerHTML = "sdfsd";
-				tdWeight.innerHTML = "sdfsd";
-				tdDate.innerHTML = "sdfsd";
-				tdLbs.innerHTML = "sdfsd";
+				tdName.innerHTML = payload.name;
+				tdReps.innerHTML = payload.reps;
+				tdWeight.innerHTML = payload.weight;
+				tdDate.innerHTML = payload.date;
+				tdLbs.innerHTML = payload.lbs;
 
-				inputDelete.href = "link";
-				//inputDelete.id = "delete";
-				//inputDelete.value = "Delete";
-				inputDelete.innerHTML = "Delete";
+				inputDelete.type = "submit";
+				inputDelete.id = "delete";
+				inputDelete.value = "Delete";
+				//inputDelete.innerHTML = "Delete";
 
 				inputEdit.type = "submit";
 				inputEdit.id = "edit";
