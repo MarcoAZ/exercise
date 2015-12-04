@@ -13,7 +13,7 @@ function bindButtons(){
 			payload.lbs =  document.getElementById('lbs').value;
 			console.log(JSON.stringify(payload));
 			
-			req.open('GET', 'http://54.149.55.4:3000/insert', true);
+			req.open('GET', 'http://54.149.55.4:3000/insert?name=squat', true);
 			req.setRequestHeader('Content-Type', 'application/json');
 			req.addEventListener('load',function(){
 			  if(req.status >= 200 && req.status < 400){
@@ -23,7 +23,7 @@ function bindButtons(){
 				console.log("Error in network request: " + req.statusText);
 			  }});
 			
-			req.send(JSON.stringify(payload));
+			req.send(payload);
 			e.preventDefault();
 	})
 }
