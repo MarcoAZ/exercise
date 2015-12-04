@@ -29,51 +29,53 @@ function bindButtons(){
 				var tdWeight = document.createElement("td");
 				var tdDate = document.createElement("td");
 				var tdLbs = document.createElement("td");
-				
-				var tdDelete = document.createElement("div");
-				var tdEdit= document.createElement("div");
-				
-				var form = document.createElement("form");
-				var inputDelete = document.createElement("input");
+
+				var tdDelete = document.createElement("td");
+				var tdEdit = document.createElement("td");
+
+				//var form = document.createElement("form");
+				var inputDelete = document.createElement("a");
 				var inputEdit = document.createElement("input");
 				var hiddenId = document.createElement("input");
 				//attach text
-				tdName.innerHTML = payload.name;
-				tdReps.innerHTML = payload.reps;
-				tdWeight.innerHTML = payload.weight;
-				tdDate.innerHTML = payload.date;
-				tdLbs.innerHTML = payload.lbs;
-				
-				inputDelete.type = "submit";
-				inputDelete.id = "delete";
-				inputDelete.value = "Delete";
-				
+				tdName.innerHTML = "sdfsd";
+				tdReps.innerHTML = "sdfsd";
+				tdWeight.innerHTML = "sdfsd";
+				tdDate.innerHTML = "sdfsd";
+				tdLbs.innerHTML = "sdfsd";
+
+				inputDelete.href = "link";
+				//inputDelete.id = "delete";
+				//inputDelete.value = "Delete";
+				inputDelete.innerHTML = "Delete";
+
 				inputEdit.type = "submit";
 				inputEdit.id = "edit";
 				inputEdit.value = "Edit";
-				
+
 				//need the inserted id for hidden value
 				hiddenId.type = "hidden";
 				hiddenId.name = "id";
-				hiddenId.value = response.insertId;
-				
+				hiddenId.value = "1";
+
 				//append inputs to td
-				tdDelete.innerHTML = "<input type='submit' id='delete' value='Delete' />";
+				tdDelete.appendChild(inputDelete);
 				tdEdit.appendChild(inputEdit);
-				
+
 				//append form components to form
-				form.appendChild(hiddenId);
-				form.appendChild(tdDelete);
-				form.appendChild(tdEdit);
-				
+				//form.appendChild(hiddenId);
+				//form.appendChild(tdDelete);
+				//form.appendChild(tdEdit);
+
 				//append everything to tr
 				tr.appendChild(tdName);
 				tr.appendChild(tdReps);
 				tr.appendChild(tdWeight);
 				tr.appendChild(tdDate);
 				tr.appendChild(tdLbs);
-				tr.appendChild(form);
-				
+				tr.appendChild(tdDelete);
+				tr.appendChild(tdEdit);
+
 				tbody.appendChild(tr);
 
 			}
