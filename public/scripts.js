@@ -29,6 +29,7 @@ function bindButtons(){
 				var tdWeight = document.createElement("td");
 				var tdDate = document.createElement("td");
 				var tdLbs = document.createElement("td");
+				
 				var tdDelete = document.createElement("div");
 				var tdEdit= document.createElement("div");
 				
@@ -47,9 +48,9 @@ function bindButtons(){
 				inputDelete.id = "delete";
 				inputDelete.value = "Delete";
 				
-				inputDelete.type = "submit";
-				inputDelete.id = "edit";
-				inputDelete.value = "Edit";
+				inputEdit.type = "submit";
+				inputEdit.id = "edit";
+				inputEdit.value = "Edit";
 				
 				//need the inserted id for hidden value
 				hiddenId.type = "hidden";
