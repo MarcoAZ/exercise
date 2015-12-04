@@ -55,16 +55,13 @@ app.get('/reset-table',function(req,res,next){
 app.post('/insert',function(req,res,next){
   var context = {};
 
-  //console.log("req.body.name: " + req.body.name); //undefined
-  //console.log("[req.body.name]: " + [req.body.name]); //blank????
-
 	pool.query("INSERT INTO workouts (`name`, `reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
   //  pool.query("INSERT INTO workouts (`name`) VALUES (?)", [req.query.name], function(err, result){
     if(err){
       next(err);
       return;
     }
-    context.insert = "Inserted id: " + result.insertId;
+    context.insertId = result.insertId;
 	res.send(context);
   });
 });
