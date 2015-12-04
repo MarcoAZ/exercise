@@ -47,7 +47,7 @@ app.get('/reset-table',function(req,res,next){
   });
 });
 
-app.get('/insert',function(req,res,next){
+app.POST('/insert',function(req,res,next){
   var context = {};
 
   console.log("req.body.name: " + req.body.name); //undefined
