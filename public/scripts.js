@@ -57,7 +57,7 @@ function bindButtons(){
 				hiddenId.value = response.insertId
 				
 				//append inputs to td
-				tdDelete.innerHTML = "<input type='submit' id='delete' value='Delete'>";
+				tdDelete.innerHTML = "<input type='submit' id='delete' value='Delete' />";
 				tdEdit.appendChild(inputEdit);
 				
 				//append form components to form
