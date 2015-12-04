@@ -23,7 +23,7 @@ function bindButtons(){
 				console.log("Error in network request: " + req.statusText);
 			  }});
 			
-			req.send(payload);
+			req.send(JSON.stringify(payload));
 			e.preventDefault();
 	})
 }
