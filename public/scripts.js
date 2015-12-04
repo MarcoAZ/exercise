@@ -55,7 +55,7 @@ function bindButtons(){
 				//need the inserted id for hidden value
 				hiddenId.type = "hidden";
 				hiddenId.name = "id";
-				hiddenId.value = response.insertId
+				hiddenId.value = response.insertId;
 				
 				//append inputs to td
 				tdDelete.innerHTML = "<input type='submit' id='delete' value='Delete' />";
