@@ -6,7 +6,7 @@ function bindEditButton(){
 		var req = new XMLHttpRequest();
 		
 		//build a payload
-		var payload = {id:null. name:null, reps:null, weight:null, date:null, lbs:null};
+		var payload = {id:null, name:null, reps:null, weight:null, date:null, lbs:null};
 		payload.id = document.getElementById('id').value;
 		payload.name = document.getElementById('name').value;
 		payload.reps =  document.getElementById('reps').value;

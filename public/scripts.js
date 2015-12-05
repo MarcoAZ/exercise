@@ -42,7 +42,7 @@ function deleteRowTr(tableID,currentRow) {
 
 //functions to edit rows
 var editRow = function(id){
-     //make edit request
+     //redirect
     window.location = "/edit?id="+id;
 }
 
@@ -57,7 +57,6 @@ function bindButtons(){
 			payload.weight =  document.getElementById('weight').value;
 			payload.date =  document.getElementById('date').value;
 			payload.lbs =  document.getElementById('lbs').value;
-			console.log(JSON.stringify(payload));
 			
 			//create elements for later
 			var tbody = document.getElementById("tbody");
