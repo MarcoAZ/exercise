@@ -94,6 +94,7 @@ app.post('/update',function(req,res,next){
 			context.rows = rows;
 			res.render('home', context);
 		});
+		res.render('home', context);
 	});
 });
 
