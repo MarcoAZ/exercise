@@ -92,7 +92,22 @@ app.get('/update',function(req,res,next){
 
 app.get('/edit',function(req,res,next){
 	var ctx = {};
-	ctx.id = req.query.id;
+	pool.query("SELECT * FROM workouts WHERE id=", [req.query.id], function(err, result){
+		if(err)
+		{
+			next(err);
+			return;
+		}
+		if(result.length = 1){
+			var curVals = result[0];
+
+			ctx.name = curVals.name;
+			ctx.reps = curVals.reps;
+			ctx.weight = curVals.weight;
+			ctx.date= curVals.date;
+			ctx.lbs = curVals.lbs;
+		}
+	});
 	res.render('edit', ctx);
 });
 
