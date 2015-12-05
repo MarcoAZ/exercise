@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', bindButtons);
 function deleteRowId(id){
      //make delete mysql request
     console.log('please delete: ID#' + id);
-  	var table
+  	
 }
 
 function deleteRowTr(tableID,currentRow) {
