@@ -42,8 +42,24 @@ function deleteRowTr(tableID,currentRow) {
 
 //functions to edit rows
 var editRow = function(id){
-     //redirect
-    window.location = "/edit?id="+id;
+     //make edit request
+    var req = new XMLHttpRequest();
+	var payload = {id:null};
+	payload.id = id;
+	
+	req.open('GET', 'http://54.149.55.4:3000/edit?id='+id, true);
+	req.setRequestHeader('Content-Type', 'application/json');
+	req.addEventListener('load',function(){
+		if(req.status >= 200 && req.status < 400)
+		{
+			var response = req.responseText;
+			console.log(response.results);
+		}
+		else {
+			console.log("Error in network request: " + req.statusText);
+		}
+	});
+  	req.send(null);
 }
 
 function bindButtons(){
