@@ -22,6 +22,7 @@
 				<input type="submit" id="add" value="Add">
 			</fieldset>
 		</form>
+		<!-- TABLE FOR DB ENTRIES -->
 		<table id="dataTable">
 			<thead>
 				<tr>
@@ -45,15 +46,12 @@
 					<td>
 						<form>
 							<input type="hidden" value={{this.id}}>
-							<!-- <input type="hidden" value="100"> -->
 							<input type="submit" value="Delete" onclick="deleteRowTr('dataTable',this);deleteRowId({{this.id}}); return false" />
-							<!-- <input type="submit" value="Delete" onclick="deleteRowTr('dataTable',this);deleteRowId(100); return false" /> -->
 						</form>
 					</td>
 					<td>
 						<form>
 							<input type="hidden" value={{this.id}}>
-							<!-- replace 100 with {{this.id}} -->
 							<input type="submit" value="Edit" onclick="editRow({{this.id}}); return false"/>
 						</form>
 					</td>

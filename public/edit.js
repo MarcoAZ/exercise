@@ -13,18 +13,20 @@ function bindEditButton(){
 		payload.weight =  document.getElementById('weight').value;
 		payload.date =  document.getElementById('date').value;
 		payload.lbs =  document.getElementById('lbs').value;
+		//format date correctly
 		var d = new Date(payload.date);
 		var month = d.getMonth() + 1; //Months are zero based
 		var year = d.getFullYear();
-		var day = d.getDate();
+		var day = d.getDate() +1; //days are zero based
 		d = year + "-" + month + "-" + day;
 		payload.date = d;
+		
 		req.open('POST', 'http://54.149.55.4:3000/update', true);
 		req.setRequestHeader('Content-Type', 'application/json');
 		req.addEventListener('load',function(){
 			if(req.status >= 200 && req.status < 400)
 			{
-				console.log("updated");
+				//redirect
 				window.location = "http://54.149.55.4:3000";
 			}
 			else {

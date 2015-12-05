@@ -105,34 +105,6 @@ function bindButtons(){
 			if(req.status >= 200 && req.status < 400)
 			{
 				var response = JSON.parse(req.responseText);
-				console.log(response.insertId);
-				//get tbody
-				// var tbody = document.getElementById("tbody");
-				// //create table row and data
-				// var tr = document.createElement("tr");
-				// var tdName = document.createElement("td");
-				// var tdReps = document.createElement("td");
-				// var tdWeight = document.createElement("td");
-				// var tdDate = document.createElement("td");
-				// var tdLbs = document.createElement("td");
-
-				// var tdDelete = document.createElement("td");
-				// var tdEdit = document.createElement("td");
-
-				//var form = document.createElement("form");
-				// var inputDelete = document.createElement("input");
-				// var inputEdit = document.createElement("input");
-				// var hiddenId = document.createElement("input");
-				//attach text
-				// tdName.innerHTML = payload.name;
-				// tdReps.innerHTML = payload.reps;
-				// tdWeight.innerHTML = payload.weight;
-				// tdDate.innerHTML = payload.date;
-				// tdLbs.innerHTML = payload.lbs;
-
-				// inputDelete.type = "submit";
-				// inputDelete.id = "delete";
-				// inputDelete.value = "Delete";
 				inputDelete.addEventListener('click', function(e){
 					//make delete request
 					deleteRowId(response.insertId);
@@ -146,32 +118,6 @@ function bindButtons(){
 					e.preventDefault();
 				});
 
-				// inputEdit.type = "submit";
-				// inputEdit.id = "edit";
-				// inputEdit.value = "Edit";
-
-				//need the inserted id for hidden value
-				// hiddenId.type = "hidden";
-				// hiddenId.name = "id";
-				// hiddenId.value = "1";
-
-				//append inputs to td
-				// tdDelete.appendChild(inputDelete);
-				// tdEdit.appendChild(inputEdit);
-
-				//append form components to form
-				//form.appendChild(hiddenId);
-				//form.appendChild(tdDelete);
-				//form.appendChild(tdEdit);
-
-				//append everything to tr
-				// tr.appendChild(tdName);
-				// tr.appendChild(tdReps);
-				// tr.appendChild(tdWeight);
-				// tr.appendChild(tdDate);
-				// tr.appendChild(tdLbs);
-				// tr.appendChild(tdDelete);
-				// tr.appendChild(tdEdit);
 
 				tbody.appendChild(tr);
 
