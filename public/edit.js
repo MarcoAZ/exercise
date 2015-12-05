@@ -13,7 +13,7 @@ function bindEditButton(){
 		payload.weight =  document.getElementById('weight').value;
 		payload.date =  document.getElementById('date').value;
 		payload.lbs =  document.getElementById('lbs').value;
-		alert(payload.id);
+		alert(document.getElementById('id').value);
 		req.open('POST', 'http://54.149.55.4:3000/update', true);
 		req.setRequestHeader('Content-Type', 'application/json');
 		req.addEventListener('load',function(){
