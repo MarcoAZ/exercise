@@ -4,8 +4,23 @@ document.addEventListener('DOMContentLoaded', bindButtons);
 //functions to delete rows
 function deleteRowId(id){
      //make delete mysql request
-    console.log('please delete: ID#' + id);
-  	
+    var req = new XMLHttpRequest();
+	var payload = {id:null};
+	payload.id = id;
+	
+	req.open('POST', 'http://54.149.55.4:3000/delete', true);
+	req.setRequestHeader('Content-Type', 'application/json');
+	req.addEventListener('load',function(){
+		if(req.status >= 200 && req.status < 400)
+		{
+			var response = JSON.parse(req.responseText);
+			console.log(response.results);
+		}
+		else {
+			console.log("Error in network request: " + req.statusText);
+		}
+	});
+  	req.send(JSON.stringify(payload));
 }
 
 function deleteRowTr(tableID,currentRow) {

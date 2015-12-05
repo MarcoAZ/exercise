@@ -66,6 +66,20 @@ app.post('/insert',function(req,res,next){
   });
 });
 
+app.post('/delete',function(req,res,next){
+  var context = {};
+  mysql.pool.query("DELETE FROM workouts WHERE id=? ",
+    [req.body.id],
+    function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
+    context.results = "Deleted " + result.changedRows + " rows.";
+    res.send(context);
+  });
+});
+
 app.listen(app.get('port'), function(){
   console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
