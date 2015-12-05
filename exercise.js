@@ -30,7 +30,7 @@ app.get('/',function(req,res,next){
       next(err);
       return;
     }
-    context.rows = JSON.stringify(rows);
+    context.rows = rows;
     res.render('home', context);
   });
 });

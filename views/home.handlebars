@@ -1,19 +1,26 @@
-<table>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Reps</th>
-			<th>Weight</th>
-			<th>Date</th>
-			<th>Lbs</th>
-			<th>Delete</th>
-			<th>Edit</th>
-		</tr>
-	</thead>
-	<tbody id="tbody">
-
-	</tbody>
-</table>
+{{#each rows}}
+<tr>
+	<td>{{this.name}}</td>
+	<td>{{this.reps}}</td>
+	<td>{{this.weight}}</td>
+	<td>{{this.date}}</td>
+	<td>{{this.lbs}}</td>
+	<td>
+		<form>
+			<input type="hidden" value={{this.id}}>
+			<!-- <input type="hidden" value="100"> -->
+			<input type="submit" value="Delete" onclick="deleteRowTr('dataTable',this);deleteRow({{this.id}}); return false" />
+			<!-- <input type="submit" value="Delete" onclick="deleteRowTr('dataTable',this);deleteRowId(100); return false" /> -->
+		</form>
+	</td>
+	<td>
+		<form>
+			<!-- replace 100 with {{this.id}} -->
+			<input type="submit" value="Edit" onclick="editRow({{this.id}}); return false"/>
+		</form>
+	</td>
+</tr>
+{{/each}}
 
 {{#if reset}}
 	<p>{{{reset}}}</p>
