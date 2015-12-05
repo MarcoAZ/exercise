@@ -85,16 +85,7 @@ app.post('/update',function(req,res,next){
 		  next(err);
 		  return;
 		}
-		//redirect home
-		pool.query('SELECT * FROM workouts', function(err, rows, fields){
-			if(err){
-				next(err);
-				return;
-			}
-			context.rows = rows;
-			res.render('home', context);
-		});
-		res.render('home', context);
+		//redirect home is called in the response
 	});
 });
 

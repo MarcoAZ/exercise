@@ -20,6 +20,7 @@ function bindEditButton(){
 			if(req.status >= 200 && req.status < 400)
 			{
 				console.log("update");
+				window.location = "/";
 			}
 			else {
 				console.log("Error in network request: " + req.statusText);
