@@ -78,15 +78,15 @@ app.post('/delete',function(req,res,next){
   });
 });
 
-app.get('/update',function(req,res,next){
+app.post('/update',function(req,res,next){
 	var context = {};
-	pool.query("UPDATE todo SET name=?, done=?, due=? WHERE id=? ", [req.query.name, req.query.done, req.query.due, req.query.id], function(err, result){
+	pool.query("UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs, req.body.id], function(err, result){
     if(err){
       next(err);
       return;
     }
-    context.results = "Updated " + result.changedRows + " rows.";
-    res.render('home',context);
+	//redirect home
+    window.location = "/";
   });
 });
 
