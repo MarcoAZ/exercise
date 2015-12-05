@@ -101,7 +101,7 @@ app.get('/edit',function(req,res,next){
 		}
 		if(result.length = 1){
 			var curVals = result[0];
-
+			ctx.id = req.query.id;
 			ctx.name = curVals.name;
 			ctx.reps = curVals.reps;
 			ctx.weight = curVals.weight;
