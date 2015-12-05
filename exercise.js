@@ -86,6 +86,8 @@ app.post('/update',function(req,res,next){
 		  return;
 		}
 		//redirect home is called in the response
+		context.results = "Deleted " + result.changedRows + " rows.";
+		res.send(context);
 	});
 });
 
