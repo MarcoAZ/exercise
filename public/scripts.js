@@ -43,7 +43,7 @@ function deleteRowTr(tableID,currentRow) {
 //functions to edit rows
 var editRow = function(id){
      //make edit request
-    console.log('please edit: ID#' + id);
+    window.location = "/";
 }
 
 function bindButtons(){

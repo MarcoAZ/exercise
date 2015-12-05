@@ -78,6 +78,18 @@ app.post('/delete',function(req,res,next){
   });
 });
 
+app.get('/update',function(req,res,next){
+	var context = {};
+	pool.query("UPDATE todo SET name=?, done=?, due=? WHERE id=? ", [req.query.name, req.query.done, req.query.due, req.query.id], function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
+    context.results = "Updated " + result.changedRows + " rows.";
+    res.render('home',context);
+  });
+});
+
 app.listen(app.get('port'), function(){
   console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
