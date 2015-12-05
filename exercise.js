@@ -92,8 +92,9 @@ app.post('/update',function(req,res,next){
 				return;
 			}
 			context.rows = rows;
-			res.render('home', context);
+			// res.render('home', context);
 		});
+		res.render('home', context);
 	});
 });
 
