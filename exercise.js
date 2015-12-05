@@ -81,13 +81,20 @@ app.post('/delete',function(req,res,next){
 app.post('/update',function(req,res,next){
 	var context = {};
 	pool.query("UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs, req.body.id], function(err, result){
-    if(err){
-      next(err);
-      return;
-    }
-	//redirect home
-    window.location = "/";
-  });
+		if(err){
+		  next(err);
+		  return;
+		}
+		//redirect home
+		pool.query('SELECT * FROM workouts', function(err, rows, fields){
+			if(err){
+				next(err);
+				return;
+			}
+			context.rows = rows;
+			res.render('home', context);
+		});
+	});
 });
 
 app.get('/edit',function(req,res,next){
