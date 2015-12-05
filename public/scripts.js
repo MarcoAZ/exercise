@@ -13,16 +13,14 @@ function deleteRowId(id){
 	req.addEventListener('load',function(){
 		if(req.status >= 200 && req.status < 400)
 		{
-			var response = JSON.parse(req.responseText);
+			var response = req.responseText;
 			console.log(response.results);
 		}
 		else {
 			console.log("Error in network request: " + req.statusText);
 		}
 	});
-	alert("stringed " + JSON.stringify(payload));
-	alert("nothing: " + payload);
-  	req.send(payload);
+  	req.send(JSON.stringify(payload));
 }
 
 function deleteRowTr(tableID,currentRow) {
