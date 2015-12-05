@@ -92,7 +92,7 @@ app.get('/update',function(req,res,next){
 
 app.get('/edit',function(req,res,next){
 	var ctx = {};
-	pool.query("SELECT * FROM workouts WHERE id=", [req.query.id], function(err, result){
+	pool.query("SELECT * FROM workouts WHERE id=?", [req.query.id], function(err, result){
 		if(err)
 		{
 			next(err);
