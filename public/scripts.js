@@ -53,10 +53,10 @@ function bindButtons(){
 			//build a payload
 			var payload = {name:null, reps:null, weight:null, date:null, lbs:null};
 			payload.name = document.getElementById('name').value;
-			payload.reps =  document.getElementById('reps').value == "" ? document.getElementById('reps').value : 0;
-			payload.weight =  document.getElementById('weight').value == "" ? document.getElementById('weight').value : 0;
-			payload.date =  document.getElementById('date').value == "" ? document.getElementById('date').value : 0;
-			payload.lbs =  document.getElementById('lbs').value == "" ? document.getElementById('lbs').value : 0;
+			payload.reps =  document.getElementById('reps').value != "" ? document.getElementById('reps').value : 0;
+			payload.weight =  document.getElementById('weight').value != "" ? document.getElementById('weight').value : 0;
+			payload.date =  document.getElementById('date').value != "" ? document.getElementById('date').value : 0;
+			payload.lbs =  document.getElementById('lbs').value != "" ? document.getElementById('lbs').value : 0;
 			
 			//create elements for later
 			var tbody = document.getElementById("tbody");
