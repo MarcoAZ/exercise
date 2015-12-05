@@ -6,8 +6,8 @@ function deleteRowId(id){
      //make delete mysql request
     var req = new XMLHttpRequest();
 	var payload = {id:null};
-	alert(id);
 	payload.id = id;
+	alert(payload.id);
 	
 	req.open('POST', 'http://54.149.55.4:3000/delete', true);
 	req.setRequestHeader('Content-Type', 'application/json');
