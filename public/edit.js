@@ -19,8 +19,8 @@ function bindEditButton(){
 		req.addEventListener('load',function(){
 			if(req.status >= 200 && req.status < 400)
 			{
-				console.log("update");
-				window.location = "/";
+				console.log("updated");
+				window.location = "http://54.149.55.4:3000";
 			}
 			else {
 				console.log("Error in network request: " + req.statusText);
