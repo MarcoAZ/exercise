@@ -106,10 +106,9 @@ app.get('/edit',function(req,res,next){
 			ctx.weight = curVals.weight;
 			ctx.date= curVals.date;
 			ctx.lbs = curVals.lbs;
-			alert(ctx.name);
 		}
+		res.render('edit', ctx);
 	});
-	res.render('edit', ctx);
 });
 
 app.listen(app.get('port'), function(){
