@@ -90,6 +90,12 @@ app.get('/update',function(req,res,next){
   });
 });
 
+app.get('/edit',function(req,res,next){
+	var ctx = {};
+	ctx.id = req.query.id;
+	res.render('edit', ctx);
+});
+
 app.listen(app.get('port'), function(){
   console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
