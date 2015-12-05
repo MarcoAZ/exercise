@@ -121,14 +121,14 @@ function bindButtons(){
 				// inputDelete.value = "Delete";
 				inputDelete.addEventListener('click', function(e){
 					//make delete request
-					deleteRowId(resultId);
+					deleteRowId(response.insertId);
 					deleteRowTr('tbody', this);
 					e.preventDefault();
 				 });
 				 
 				inputEdit.addEventListener('click', function(e){
 					//render edit form
-					editRow(resultId);
+					editRow(response.insertId);
 					e.preventDefault();
 				});
 
