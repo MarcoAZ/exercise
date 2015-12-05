@@ -7,7 +7,6 @@ function deleteRowId(id){
     var req = new XMLHttpRequest();
 	var payload = {id:null};
 	payload.id = id;
-	alert(payload.id);
 	
 	req.open('POST', 'http://54.149.55.4:3000/delete', true);
 	req.setRequestHeader('Content-Type', 'application/json');
@@ -21,7 +20,9 @@ function deleteRowId(id){
 			console.log("Error in network request: " + req.statusText);
 		}
 	});
-  	req.send(JSON.stringify(payload));
+	alert("stringed " + JSON.stringify(payload.id));
+	alert("nothing: " + payload.id);
+  	req.send(payload);
 }
 
 function deleteRowTr(tableID,currentRow) {
