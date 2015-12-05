@@ -20,8 +20,8 @@ function deleteRowId(id){
 			console.log("Error in network request: " + req.statusText);
 		}
 	});
-	alert("stringed " + JSON.stringify(payload.id));
-	alert("nothing: " + payload.id);
+	alert("stringed " + JSON.stringify(payload));
+	alert("nothing: " + payload);
   	req.send(payload);
 }
 
